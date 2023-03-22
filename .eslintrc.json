@@ -1,0 +1,20 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["arca", "prettier"],
+  "rules": {
+    "prefer-const": "error",
+    "prettier/prettier": "error",
+    "arca/import-ordering": [
+      "error",
+      {
+        "sections": ["^~/", "^\\.\\./", "^\\./"]
+      }
+    ],
+    "arca/newline-after-import-section": [
+      "error",
+      {
+        "sections": ["^~/", "^\\.\\./", "^\\./"]
+      }
+    ]
+  }
+}
