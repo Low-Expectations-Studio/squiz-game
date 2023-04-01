@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import './globals.css';
+import { Background } from '~/components/Background/Background';
 
 export const metadata = {
   title: 'Squiz Game',
@@ -14,14 +15,11 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* TODO REMOVE */}
+      <script src="https://cdn.tailwindcss.com"></script>
       <body>
-        <div className="h-screen w-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-700 text-black antialiased">
-          <header>
-            <Link href="/">Home</Link> | <Link href="/admin">Admin</Link> |{' '}
-            <Link href="/quiz">Quiz</Link>
-          </header>
-          {children}
-        </div>
+        <Background />
+        {children}
       </body>
     </html>
   );
