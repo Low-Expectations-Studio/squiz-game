@@ -65,9 +65,10 @@ export const LeaderBoard = ({ className }: { className: string }) => {
     <section className={`${className} flex flex-col gap-4 overflow-hidden`}>
       <h1 className="text-2xl">Leader Board</h1>
       <div className="flex flex-col gap-4 overflow-scroll">
-        {fakeData.map(({ avatarUrl, teamName, score }) => (
+        {fakeData.map(({ avatarUrl, teamName, score }, index) => (
           <LeaderboardItem
             key={teamName}
+            rank={index + 1}
             avatarUrl={avatarUrl}
             score={score}
             teamName={teamName}
