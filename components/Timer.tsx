@@ -29,8 +29,8 @@ export const Timer: React.FC<TimerProps> = ({ duration }) => {
   return (
     <div>
       <div className="flex flex-row items-center gap-2 text-lg font-bold text-gray-300">
-        <div>Timer:</div>
-        <div className="relative grow rotate-180 overflow-hidden rounded-full border-2 border-gray-600 border-opacity-30 p-1">
+        <div>Time left:</div>
+        <div className="relative grow overflow-hidden rounded-full border-2 border-gray-600 border-opacity-30 p-1">
           <div
             className={`${gradientColors} h-4 rounded-full`}
             style={barStyles}
