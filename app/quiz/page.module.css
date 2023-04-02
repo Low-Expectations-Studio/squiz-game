@@ -26,8 +26,8 @@
   grid-gap: 1em;
   grid-template-areas:
     'header'
-    'sidebar'
     'content'
+    'sidebar'
     'footer';
 }
 
