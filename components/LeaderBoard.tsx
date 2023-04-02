@@ -1,5 +1,4 @@
 import { LeaderboardItem } from './LeaderBoardItem';
-import styles from './leader-board.module.css';
 
 const fakeData = [
   {
