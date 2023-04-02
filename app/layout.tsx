@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+import AuthContext from '~/app/components/AuthContext';
+import { getSession } from '~/app/lib/data';
+
 import './globals.css';
 
 export const metadata = {
@@ -12,6 +15,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getSession();
+
   return (
     <html lang="en">
       <body>
@@ -20,7 +25,7 @@ export default async function RootLayout({
             <Link href="/">Home</Link> | <Link href="/admin">Admin</Link> |{' '}
             <Link href="/quiz">Quiz</Link>
           </header>
-          {children}
+          <AuthContext session={session}>{children}</AuthContext>
         </div>
       </body>
     </html>
