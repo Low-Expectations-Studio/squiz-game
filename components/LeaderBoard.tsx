@@ -34,12 +34,27 @@ const fakeData = [
     score: rand(),
   },
   {
-    avatarUrl: 'https://i.pravatar.cc/300?u=5',
+    avatarUrl: 'https://i.pravatar.cc/300?u=7',
     teamName: 'Les Double Cassos',
     score: rand(),
   },
   {
-    avatarUrl: 'https://i.pravatar.cc/300?u=6',
+    avatarUrl: 'https://i.pravatar.cc/300?u=8',
+    teamName: 'Les Debilos',
+    score: rand(),
+  },
+  {
+    avatarUrl: 'https://i.pravatar.cc/300?u=9',
+    teamName: 'Les Debilos',
+    score: rand(),
+  },
+  {
+    avatarUrl: 'https://i.pravatar.cc/300?u=10',
+    teamName: 'Les Double Cassos',
+    score: rand(),
+  },
+  {
+    avatarUrl: 'https://i.pravatar.cc/300?u=11',
     teamName: 'Les Debilos',
     score: rand(),
   },
@@ -47,16 +62,18 @@ const fakeData = [
 
 export const LeaderBoard = ({ className }: { className: string }) => {
   return (
-    <section className={`${className} flex flex-col gap-4`}>
+    <section className={`${className} flex flex-col gap-4 overflow-hidden`}>
       <h1 className="text-2xl">Leader Board</h1>
-      {fakeData.map(({ avatarUrl, teamName, score }) => (
-        <LeaderboardItem
-          key={teamName}
-          avatarUrl={avatarUrl}
-          score={score}
-          teamName={teamName}
-        />
-      ))}
+      <div className="flex flex-col gap-4 overflow-scroll">
+        {fakeData.map(({ avatarUrl, teamName, score }) => (
+          <LeaderboardItem
+            key={teamName}
+            avatarUrl={avatarUrl}
+            score={score}
+            teamName={teamName}
+          />
+        ))}
+      </div>
     </section>
   );
 };
