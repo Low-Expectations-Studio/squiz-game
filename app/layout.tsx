@@ -1,7 +1,6 @@
-import Link from 'next/link';
+import { Background } from '~/components/Background/Background';
 
 import './globals.css';
-import { Background } from '~/components/Background/Background';
 
 export const metadata = {
   title: 'Squiz Game',
@@ -15,8 +14,6 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* TODO REMOVE
-      <script src="https://cdn.tailwindcss.com"></script> */}
       <body>
         <Background />
         {children}
