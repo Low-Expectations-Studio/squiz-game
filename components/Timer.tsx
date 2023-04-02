@@ -21,7 +21,7 @@ export const Timer: React.FC<TimerProps> = ({ duration }) => {
 
   const progress = (timeLeft / duration) * 100;
   const gradientColors = `bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500`;
-  const gradientStyles = {
+  const barStyles = {
     width: `${progress}%`,
     transition: 'width 1s linear',
   };
@@ -30,10 +30,10 @@ export const Timer: React.FC<TimerProps> = ({ duration }) => {
     <div>
       <div className="flex flex-row items-center gap-2 text-lg font-bold text-gray-300">
         <div>Timer:</div>
-        <div className="grow overflow-hidden rounded-full border-2 border-gray-600 border-opacity-30 p-1">
+        <div className="relative grow rotate-180 overflow-hidden rounded-full border-2 border-gray-600 border-opacity-30 p-1">
           <div
             className={`${gradientColors} h-4 rounded-full`}
-            style={gradientStyles}
+            style={barStyles}
           />
         </div>
         <div>{timeLeft} s</div>
