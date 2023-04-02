@@ -15,8 +15,8 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* TODO REMOVE */}
-      <script src="https://cdn.tailwindcss.com"></script>
+      {/* TODO REMOVE
+      <script src="https://cdn.tailwindcss.com"></script> */}
       <body>
         <Background />
         {children}
