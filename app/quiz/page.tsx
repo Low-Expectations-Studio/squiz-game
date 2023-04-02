@@ -1,8 +1,9 @@
-import styles from './page.module.css';
+import { GameZone } from '~/components/GameZone';
+import { Header } from '~/components/Header';
 import { LeaderBoard } from '~/components/LeaderBoard';
 import { Progression } from '~/components/Progression';
-import { Header } from '~/components/Header';
-import { GameZone } from '~/components/GameZone';
+
+import styles from './page.module.css';
 
 export default function QuizPage() {
   return (

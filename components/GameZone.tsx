@@ -1,5 +1,4 @@
 import { Timer } from './Timer';
-import styles from './header.module.css';
 
 export const GameZone = ({ className }: { className: string }) => {
   return (
