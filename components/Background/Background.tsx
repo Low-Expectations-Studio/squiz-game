@@ -9,7 +9,7 @@ const color2 = '#321e34';
 const background = '#1c041e';
 
 interface BackgroundProps {
-  percentRatio: number;
+  percentRatio?: number;
 }
 
 export const Background: FunctionComponent<BackgroundProps> = ({
