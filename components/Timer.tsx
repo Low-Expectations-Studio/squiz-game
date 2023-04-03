@@ -3,22 +3,11 @@
 import React, { useState, useEffect } from 'react';
 
 interface TimerProps {
+  timeLeft: number;
   duration: number; // in seconds
 }
 
-export const Timer: React.FC<TimerProps> = ({ duration }) => {
-  const [timeLeft, setTimeLeft] = useState(duration);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (timeLeft > 1) {
-        setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [duration, timeLeft]);
-
+export const Timer: React.FC<TimerProps> = ({ timeLeft, duration }) => {
   const progress = (timeLeft / duration) * 100;
   const gradientColors = `bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500`;
   const barStyles = {

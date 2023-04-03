@@ -1,3 +1,6 @@
+'use client';
+import { FunctionComponent } from 'react';
+
 import styles from './background.module.css';
 
 const color1 = '#221423';
@@ -5,10 +8,24 @@ const color2 = '#321e34';
 
 const background = '#1c041e';
 
-export const Background = () => {
+interface BackgroundProps {
+  percentRatio: number;
+}
+
+export const Background: FunctionComponent<BackgroundProps> = ({
+  percentRatio,
+}) => {
+  const maxHue = 53;
+  const maxSaturate = 1;
+  const hue = Math.round(percentRatio * maxHue);
+  const saturate = percentRatio * maxSaturate;
+
   return (
     <svg
-      style={{ backgroundColor: background }}
+      style={{
+        backgroundColor: background,
+        filter: `hue-rotate(${hue}deg) saturate(${saturate + 1})`,
+      }}
       className={styles.background}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid slice"
