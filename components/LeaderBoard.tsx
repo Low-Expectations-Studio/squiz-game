@@ -30,7 +30,7 @@ const fakeData = [
   },
   {
     avatarUrl: 'https://i.pravatar.cc/300?u=6',
-    teamName: 'Les Debilos',
+    teamName: 'Los Occupados',
     score: rand(),
   },
   {
