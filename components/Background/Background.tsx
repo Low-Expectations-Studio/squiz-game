@@ -13,7 +13,7 @@ interface BackgroundProps {
 }
 
 export const Background: FunctionComponent<BackgroundProps> = ({
-  percentRatio,
+  percentRatio = 0,
 }) => {
   const maxHue = 53;
   const maxSaturate = 1;
