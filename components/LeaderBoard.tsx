@@ -35,7 +35,7 @@ const fakeData = [
   },
   {
     avatarUrl: 'https://i.pravatar.cc/300?u=7',
-    teamName: 'Les Double Cassos',
+    teamName: 'Les Zinzins du boulot',
     score: rand(),
   },
   {
@@ -45,7 +45,7 @@ const fakeData = [
   },
   {
     avatarUrl: 'https://i.pravatar.cc/300?u=9',
-    teamName: 'Les Debilos',
+    teamName: 'Les Coolos',
     score: rand(),
   },
   {
@@ -55,7 +55,7 @@ const fakeData = [
   },
   {
     avatarUrl: 'https://i.pravatar.cc/300?u=11',
-    teamName: 'Les Debilos',
+    teamName: 'Despacitos',
     score: rand(),
   },
 ].sort((a, b) => b.score - a.score);
