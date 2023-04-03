@@ -5,10 +5,15 @@ import React, { useState, useEffect } from 'react';
 interface TimerProps {
   timeLeft: number;
   duration: number; // in seconds
+  percentRatio: number;
 }
 
-export const Timer: React.FC<TimerProps> = ({ timeLeft, duration }) => {
-  const progress = (timeLeft / duration) * 100;
+export const Timer: React.FC<TimerProps> = ({
+  timeLeft,
+  duration,
+  percentRatio,
+}) => {
+  const progress = (1 - percentRatio) * 100;
   const gradientColors = `bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500`;
   const barStyles = {
     width: `${progress}%`,

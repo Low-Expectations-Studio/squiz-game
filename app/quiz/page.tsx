@@ -27,7 +27,7 @@ const useTimer = (duration: number) => {
 };
 
 export default function QuizPage() {
-  const { timeLeft, percentRatio } = useTimer(100);
+  const { timeLeft, percentRatio } = useTimer(20);
   return (
     <>
       <main className={styles.wrapper}>
@@ -36,6 +36,7 @@ export default function QuizPage() {
         <GameZone
           className={`${styles.box} ${styles.content}`}
           timeLeft={timeLeft}
+          percentRatio={percentRatio}
         />
         <LeaderBoard className={styles.sidebar} />
         <Progression className={styles.footer} percentRatio={percentRatio} />
