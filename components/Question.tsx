@@ -1,5 +1,3 @@
-'use client';
-
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import React, { useEffect } from 'react';
 
