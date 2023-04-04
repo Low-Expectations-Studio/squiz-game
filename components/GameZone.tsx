@@ -19,7 +19,7 @@ export const GameZone: FunctionComponent<GameZoneProps> = ({
     >
       <Timer duration={100} timeLeft={timeLeft} percentRatio={percentRatio} />
       <Question
-        title="Find 10 movies"
+        title="List the 10 movies hidden in this picture"
         description="Zoom in into the picture to see full details"
         scale="10 answers, + for correct answer / -1 for incorrect answer"
       />

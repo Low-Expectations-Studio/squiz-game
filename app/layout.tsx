@@ -1,5 +1,3 @@
-import { Background } from '~/components/Background/Background';
-
 import './globals.css';
 
 export const metadata = {
@@ -14,7 +12,6 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body>{children}</body>
     </html>
   );

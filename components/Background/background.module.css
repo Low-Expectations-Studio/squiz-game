@@ -4,13 +4,24 @@
   }
 }
 
+@keyframes rotate2 {
+  0% {
+    transform: scale(3) rotate(0deg);
+  }
+  100% {
+    transform: scale(3) rotate(360deg);
+  }
+}
+
 .background {
+  transform: scale(2);
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  animation: rotate2 120s linear infinite;
 }
 
 .out-top {
