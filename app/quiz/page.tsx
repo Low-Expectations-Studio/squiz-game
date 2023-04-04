@@ -15,8 +15,12 @@ const useTimer = (duration: number) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (timeLeft > 1) {
+      if (timeLeft > 0) {
         setTimeLeft((prevTimeLeft) => prevTimeLeft - 1);
+      }
+      // TODO remove
+      if (timeLeft === 0) {
+        setTimeLeft(duration);
       }
     }, 1000);
 

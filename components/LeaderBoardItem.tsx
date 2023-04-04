@@ -14,7 +14,7 @@ export const LeaderboardItem: React.FC<LeaderboardItemProps> = ({
   avatarUrl,
 }) => {
   return (
-    <div className="flex h-16 items-center rounded-full border border-black border-opacity-50 shadow-lg backdrop-blur-md backdrop-saturate-150">
+    <div className="flex h-16 items-center rounded-full border border-black border-opacity-50 bg-white/5 shadow-lg backdrop-blur-md">
       <div className="flex-shrink-0">
         <div
           style={{

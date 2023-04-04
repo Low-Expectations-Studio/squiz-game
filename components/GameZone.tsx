@@ -15,10 +15,14 @@ export const GameZone: FunctionComponent<GameZoneProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col gap-6 ${className} rounded-xl border-2 border-gray-600 border-opacity-30 p-6 backdrop-blur-lg`}
+      className={`flex flex-col gap-6 ${className} rounded-xl border-2 border-gray-600 border-opacity-30 bg-white/5 p-6 backdrop-blur-lg`}
     >
       <Timer duration={100} timeLeft={timeLeft} percentRatio={percentRatio} />
-      <Question />
+      <Question
+        title="Find 10 movies"
+        description="Zoom in into the picture to see full details"
+        scale="10 answers, + for correct answer / -1 for incorrect answer"
+      />
     </div>
   );
 };
