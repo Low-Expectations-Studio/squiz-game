@@ -25,7 +25,7 @@ export const Question: FunctionComponent<QuestionProps> = ({
             {scale}
           </div>
         </div>
-        <div className="max-w-[50%] rounded-lg">
+        <div className="max-w-[50%] overflow-hidden rounded-lg">
           <TransformWrapper>
             <TransformComponent>
               <img src="https://www.enigme-facile.fr/wp-content/uploads/2020/11/25-films-enigme.jpg" />
