@@ -1,3 +1,5 @@
+import { FirestoreAdapter } from '@next-auth/firebase-adapter';
+import { cert } from 'firebase-admin/app';
 import GoogleProvider from 'next-auth/providers/google';
 import NextAuth from 'next-auth';
 
@@ -10,8 +12,18 @@ const handler = NextAuth({
       clientSecret: env.AUTH_GOOGLE_CLIENT_SECRET,
     }),
   ],
+  session: {
+    strategy: 'jwt',
+  },
+  adapter: FirestoreAdapter({
+    credential: cert({
+      projectId: env.FIRESTORE_PROJECT_ID,
+      clientEmail: env.FIRESTORE_CLIENT_EMAIL,
+      privateKey: env.FIRESTORE_CLIENT_PRIVATE_KEY,
+    }),
+  }),
   callbacks: {
-    async signIn({ account, profile }) {
+    signIn({ account, profile }) {
       if (account && account.provider === 'google') {
         return Boolean(
           profile?.email &&
@@ -23,7 +35,7 @@ const handler = NextAuth({
 
       return true;
     },
-    async jwt({ token }) {
+    jwt({ token }) {
       return {
         ...token,
         role:

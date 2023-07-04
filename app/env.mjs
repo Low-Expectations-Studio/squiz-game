@@ -11,5 +11,8 @@ export const env = createEnv({
     AUTH_ADMIN_EMAILS: z
       .string()
       .transform((s) => s.split(',').map((part) => part.trim())),
+    FIRESTORE_PROJECT_ID: z.string(),
+    FIRESTORE_CLIENT_EMAIL: z.string(),
+    FIRESTORE_CLIENT_PRIVATE_KEY: z.string(),
   },
 });
