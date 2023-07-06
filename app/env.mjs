@@ -14,5 +14,11 @@ export const env = createEnv({
     FIRESTORE_PROJECT_ID: z.string(),
     FIRESTORE_CLIENT_EMAIL: z.string(),
     FIRESTORE_CLIENT_PRIVATE_KEY: z.string(),
+    FIRESTORE_API_KEY: z.string(),
+    FIRESTORE_AUTH_DOMAIN: z.string(),
+    FIRESTORE_STORAGE_BUCKET: z.string(),
+    FIRESTORE_MESSAGING_SENDER_ID: z.string(),
+    FIRESTORE_APP_ID: z.string(),
+    FIRESTORE_MEASUREMENT_ID: z.string(),
   },
 });
