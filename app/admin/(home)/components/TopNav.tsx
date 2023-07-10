@@ -8,7 +8,7 @@ export function TopNav() {
   const session = useSession();
 
   return (
-    <div className="flex w-full items-center justify-between pb-7">
+    <div className="flex w-full items-center justify-between p-6 pb-0">
       <h1 className="text-3xl font-bold">Admin</h1>
 
       {session.data?.user && (

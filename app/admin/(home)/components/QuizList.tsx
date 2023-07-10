@@ -7,9 +7,9 @@ export async function QuizList() {
 
   return (
     <div className="h-full overflow-auto rounded-t-lg">
-      <table className="table-pin-rows table-zebra table w-full">
+      <table className="table-pin-rows table-zebra table-sm table w-full">
         <thead className="top-0">
-          <tr className="h-12 [&>th]:bg-gray-200">
+          <tr className="h-12 [&>th]:bg-gray-300">
             <th className="w-6/12">Name</th>
             <th className="w-1/12 text-end">Questions</th>
             <th className="w-1/12 text-end">Created At</th>
