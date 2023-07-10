@@ -1,19 +1,13 @@
-import {
-  type Timestamp,
-  collection,
-  getDocs,
-  orderBy,
-  query,
-} from 'firebase/firestore';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 
-import { db, genericConverter } from '~/lib/firebase';
+import { db, genericConverter } from '~/shared/lib/firebase';
 
-interface Quiz {
+export interface Quiz {
   id: string;
   name: string;
   description: string;
-  createdAt: Timestamp;
-  updatedAt?: Timestamp;
+  createdAt: number;
+  updatedAt?: number;
 }
 
 export async function getQuizzes() {

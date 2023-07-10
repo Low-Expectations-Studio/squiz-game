@@ -17,9 +17,9 @@ const handler = NextAuth({
   },
   adapter: FirestoreAdapter({
     credential: cert({
-      projectId: env.FIRESTORE_PROJECT_ID,
-      clientEmail: env.FIRESTORE_CLIENT_EMAIL,
-      privateKey: env.FIRESTORE_CLIENT_PRIVATE_KEY,
+      projectId: env.NEXT_PUBLIC_FIRESTORE_PROJECT_ID,
+      clientEmail: env.NEXT_PUBLIC_FIRESTORE_CLIENT_EMAIL,
+      privateKey: env.NEXT_PUBLIC_FIRESTORE_CLIENT_PRIVATE_KEY,
     }),
   }),
   callbacks: {

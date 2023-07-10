@@ -1,9 +1,20 @@
+'use client';
+
+import { useQuery } from '@tanstack/react-query';
 import { format } from 'date-fns';
+import Link from 'next/link';
+import { HiPencil } from 'react-icons/hi';
 
 import { getQuizzes } from '~/api/quizzes';
 
-export async function QuizList() {
-  const quizzes = await getQuizzes();
+export function QuizList() {
+  const { data: quizzes } = useQuery({
+    queryKey: ['quizzes'],
+    queryFn: getQuizzes,
+    suspense: true,
+    cacheTime: Infinity,
+    staleTime: Infinity,
+  });
 
   return (
     <div className="h-full overflow-auto rounded-t-lg">
@@ -19,21 +30,25 @@ export async function QuizList() {
           </tr>
         </thead>
         <tbody>
-          {quizzes.length > 0 ? (
+          {quizzes && quizzes.length > 0 ? (
             quizzes.map((quiz) => {
               return (
                 <tr key={quiz.id} className="h-12">
                   <td>{quiz.name}</td>
                   <td className="text-end">TODO</td>
                   <td className="text-end">
-                    {format(quiz.createdAt.toDate(), 'MM/dd/yyyy')}
+                    {format(new Date(quiz.createdAt), 'MM/dd/yyyy')}
                   </td>
                   <td className="text-end">
                     {quiz.updatedAt &&
-                      format(quiz.updatedAt.toDate(), 'MM/dd/yyyy')}
+                      format(new Date(quiz.updatedAt), 'MM/dd/yyyy')}
                   </td>
                   <td className="text-end">TODO</td>
-                  <td className="text-end">TODO</td>
+                  <td className="flex justify-end">
+                    <Link href={`/admin/form/${quiz.id}`}>
+                      <HiPencil className="h-8 w-8 cursor-pointer pl-3 text-gray-400" />
+                    </Link>
+                  </td>
                 </tr>
               );
             })

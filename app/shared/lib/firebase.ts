@@ -9,13 +9,13 @@ import {
 import { env } from '~/env.mjs';
 
 const firebaseConfig = {
-  apiKey: env.FIRESTORE_API_KEY,
-  authDomain: env.FIRESTORE_AUTH_DOMAIN,
-  projectId: env.FIRESTORE_PROJECT_ID,
-  storageBucket: env.FIRESTORE_STORAGE_BUCKET,
-  messagingSenderId: env.FIRESTORE_MESSAGING_SENDER_ID,
-  appId: env.FIRESTORE_APP_ID,
-  measurementId: env.FIRESTORE_MEASUREMENT_ID,
+  apiKey: env.NEXT_PUBLIC_FIRESTORE_API_KEY,
+  authDomain: env.NEXT_PUBLIC_FIRESTORE_AUTH_DOMAIN,
+  projectId: env.NEXT_PUBLIC_FIRESTORE_PROJECT_ID,
+  storageBucket: env.NEXT_PUBLIC_FIRESTORE_STORAGE_BUCKET,
+  messagingSenderId: env.NEXT_PUBLIC_FIRESTORE_MESSAGING_SENDER_ID,
+  appId: env.NEXT_PUBLIC_FIRESTORE_APP_ID,
+  measurementId: env.NEXT_PUBLIC_FIRESTORE_MEASUREMENT_ID,
 };
 
 if (!getApps().length) {

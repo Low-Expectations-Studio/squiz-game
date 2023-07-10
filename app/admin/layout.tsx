@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 
 import { TopNav } from '~/admin/(home)/components/TopNav';
-import { AuthProvider } from '~/shared/components/auth/AuthProvider';
+import { Providers } from '~/shared/components/Providers';
 
 import '../globals.css';
 
@@ -20,7 +20,7 @@ export default async function AdminLayout({
   return (
     <html lang="en">
       <body className="h-screen w-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-700 text-black antialiased">
-        <AuthProvider serverSession={serverSession}>
+        <Providers serverSession={serverSession}>
           <div className="flex h-full w-full items-center justify-center p-4">
             <div className="flex h-full w-full flex-col rounded-lg bg-gray-50 shadow-xl">
               <TopNav />
@@ -30,7 +30,7 @@ export default async function AdminLayout({
               </main>
             </div>
           </div>
-        </AuthProvider>
+        </Providers>
       </body>
     </html>
   );

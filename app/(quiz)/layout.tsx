@@ -2,7 +2,7 @@ import { getServerSession } from 'next-auth';
 
 import { LoginButton } from '~/(quiz)/components/auth/LoginButton';
 import { LogoutButton } from '~/(quiz)/components/auth/LogoutButton';
-import { AuthProvider } from '~/shared/components/auth/AuthProvider';
+import { Providers } from '~/shared/components/Providers';
 
 import '../globals.css';
 
@@ -21,7 +21,7 @@ export default async function QuizLayout({
   return (
     <html lang="en">
       <body>
-        <AuthProvider serverSession={serverSession}>
+        <Providers serverSession={serverSession}>
           <div className="h-screen w-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-700 text-black antialiased">
             <header className="flex justify-end">
               {serverSession ? <LogoutButton /> : <LoginButton />}
@@ -29,7 +29,7 @@ export default async function QuizLayout({
 
             {children}
           </div>
-        </AuthProvider>
+        </Providers>
       </body>
     </html>
   );
