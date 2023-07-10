@@ -1,8 +1,8 @@
 import { getServerSession } from 'next-auth';
 
-import { AuthProvider } from '~/(quiz)/components/auth/AuthProvider';
 import { LoginButton } from '~/(quiz)/components/auth/LoginButton';
 import { LogoutButton } from '~/(quiz)/components/auth/LogoutButton';
+import { AuthProvider } from '~/shared/components/auth/AuthProvider';
 
 import '../globals.css';
 
